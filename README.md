@@ -1,118 +1,127 @@
-<h3>Algorithm</h3>
-    <pre>
-1. Start.
-2. Function reverse(int n):
-   - If n < 10:
-       - Print n.
-       - Return.
-   - Else:
-       - Print n % 10.
-       - Call reverse(n / 10).
-3. Main Function:
-   - Declare an integer n.
-   - Prompt user for a four-digit integer.
-   - Read n.
-   - Print "Reversed integer: ".
-   - Call reverse(n).
-4. End.
-    </pre>
+<title>Sum of Integers using Recursion</title>
+</head>
+<body>
 
-  <h3>Usage</h3>
+ <h1>Sum of Integers using Recursion</h1>
+
+ <h2>Aim</h2>
+    <p>The purpose of this program is to calculate the sum of all integers from 1 to a given positive integer using recursion in C++.</p>
+
+ <h2>Algorithm</h2>
     <ol>
-        <li>Compile the C++ program.</li>
-        <li>Run the executable.</li>
-        <li>Enter a four-digit integer when prompted.</li>
-        <li>The program will display the reversed integer.</li>
+        <li>Start</li>
+        <li>Input a positive integer <code>n</code> from the user.</li>
+        <li>Check if the input is valid:
+            <ul>
+                <li>If <code>n</code> is less than or equal to 0, prompt the user to enter a positive integer.</li>
+            </ul>
+        </li>
+        <li>Recursive Function Call:
+            <ul>
+                <li>If <code>n == 1</code>, return 1 (base case).</li>
+                <li>Otherwise, return <code>n + sumOfIntegers(n - 1)</code> to recursively calculate the sum.</li>
+            </ul>
+        </li>
+        <li>Display the sum of integers from 1 to <code>n</code>.</li>
+        <li>End</li>
     </ol>
 
-  <h2>2. Reverse String Program</h2>
-    <p>This C++ program reverses a string using two different recursive methods.</p>
+<h2>Understanding Recursion</h2>
+    <p><strong>Recursion</strong> is a programming technique where a function calls itself in order to solve a problem. In this program, recursion is used to calculate the sum of integers from 1 to a given number.</p>
+    <p>Each recursive call breaks the problem into smaller instances of itself until a base condition is met, in this case when <code>n == 1</code>. The function then starts returning the results back through the chain of recursive calls.</p>
+    <p>This approach allows complex problems to be solved in a simple and elegant way by dividing them into smaller, more manageable sub-problems.</p>
+    <h2>Code Explanation</h2>
+    <p>The program uses a recursive function <code>sumOfIntegers(int n)</code> to calculate the sum. The base case is when <code>n == 1</code>, and the recursion continues by reducing <code>n</code> by 1 in each call until the base case is reached.</p>
 
-  <h3>Features</h3>
-    <ul>
-        <li>Accepts a string as input from the user.</li>
-        <li>Reverses the string using a recursive function.</li>
-        <li>Demonstrates an alternate method of reversing a string recursively.</li>
-        <li>Prints both the reversed strings to the console.</li>
-    </ul>
+</body>
+<h1>Factorial using Recursion</h1>
 
-   <h3>Code Explanation</h3>
-    <p>The program consists of two main functions for reversing the string:</p>
+<h2>Aim</h2>
+    <p>The purpose of this program is to calculate the factorial of a given positive integer using recursion in C++.</p>
+    <h2>Algorithm</h2>
     <ol>
-        <li><code>reverse(char *str, int i, int n)</code>: This function recursively reverses the string by first calling itself to reach the end of the string, then printing each character during the unwinding of the recursive calls.</li>
-        <li><code>print_rev(char *str)</code>: This alternate method recursively prints the string in reverse by first processing the subsequent characters before printing the current character.</li>
+        <li>Start</li>
+        <li>Input a positive integer <code>n</code> from the user.</li>
+        <li>Check if the input is valid:
+            <ul>
+                <li>If <code>n</code> is less than 0, display a message that the factorial is not defined for negative numbers.</li>
+            </ul>
+        </li>
+        <li>Recursive Function Call:
+            <ul>
+                <li>If <code>n == 0</code> or <code>n == 1</code>, return 1 (base case).</li>
+                <li>Otherwise, return <code>n * factorial(n - 1)</code> to recursively calculate the factorial.</li>
+            </ul>
+        </li>
+        <li>Display the factorial of <code>n</code>.</li>
+        <li>End</li>
     </ol>
+    <h2>Understanding Recursion</h2>
+    <p><strong>Recursion</strong> is a method where a function calls itself to solve a problem. In this program, recursion is used to calculate the factorial of a number. The factorial of a number <code>n</code> is the product of all positive integers from 1 to <code>n</code>.</p>
+    <p>The function calls itself repeatedly, reducing <code>n</code> by 1 in each recursive step until the base case (when <code>n</code> is 0 or 1) is reached. The factorial of 0 and 1 is defined as 1.</p>
+    
+ <h1>Reverse Integer using Recursion</h1>
 
-  <h3>Algorithm</h3>
-1. Start.
-2. Function length(char *str):
-   - Initialize l = 0.
-   - While str[l] is not '\0':
-       - Increment l.
-   - Return l (length of the string).
-
-3. Function reverse(char *str, int i, int n):
-   - If i == n, return.
-   - Call reverse(str, i + 1, n).
-   - Print str[i].
-
-4. Function print_rev(char *str):
-   - If *str != '\0':
-       - Call print_rev(str + 1).
-       - Print *str.
-
-5. Main Function:
-   - Declare a char array str[50].
-   - Prompt user for a string.
-   - Read str.
-   - Call length(str) to get the string length.
-   - Call reverse(str, 0, n) to print the reversed string.
-   - Call print_rev(str) to demonstrate the alternate method.
-6. End.
-    <h3>Usage</h3>
-    <ol>
-        <li>Compile the C++ program.</li>
-        <li>Run the executable.</li>
-        <li>Enter a string when prompted.</li>
-        <li>The program will display the reversed string using both methods.</li>
-    </ol>
-<h1>Factorial Calculation Program</h1>
-<p>This C++ program calculates the factorial of a non-negative integer using recursion.</p>
-
-<h2>Features</h2>
-<ul>
-    <li>Accepts a non-negative integer as input.</li>
-    <li>Uses recursion to calculate the factorial.</li>
-    <li>Handles negative input gracefully by providing an error message.</li>
-    <li>Displays the calculated factorial to the console.</li>
-</ul>
-
-<h2>Code Explanation</h2>
-<p>The program defines a function <code>factorial_recursive(int n)</code> that performs the following:</p>
-<ol>
-    <li>Checks if the input <code>n</code> is negative; if so, it returns an error message.</li>
-    <li>Checks if <code>n</code> is equal to 0; if so, it returns 1 (since <code>0! = 1</code>).</li>
-    <li>Otherwise, it returns <code>n</code> multiplied by the factorial of <code>(n - 1)</code>.</li>
-</ol>
+<h2>Aim</h2>
+    <p>The aim of this program is to reverse a given four-digit integer using recursion in C++.</p>
 
 <h2>Algorithm</h2>
-<ol>
-    <li>Start.</li>
-    <li>Function <code>factorial_recursive(int n)</code>:
-        <ul>
-            <li>If <code>n < 0</code>: return an error message.</li>
-            <li>If <code>n == 0</code>: return 1.</li>
-            <li>Else: return <code>n * factorial_recursive(n - 1)</code>.</li>
-        </ul>
-    </li>
-    <li>Main Function:
-        <ul>
-            <li>Declare an integer <code>n</code>.</li>
-            <li>Prompt user for a non-negative integer.</li>
-            <li>Read <code>n</code>.</li>
-            <li>Call <code>factorial_recursive(n)</code> to calculate the factorial.</li>
-            <li>If the result is not an error, display the factorial.</li>
-        </ul>
-    </li>
-    <li>End.</li>
-</ol>
+    <ol>
+        <li>Start</li>
+        <li>Input a four-digit integer <code>n</code> from the user.</li>
+        <li>Recursive Function Call:
+            <ul>
+                <li>If <code>n</code> is less than 10, print <code>n</code> (base case).</li>
+                <li>Otherwise, print the last digit of <code>n</code> (i.e., <code>n % 10</code>).</li>
+                <li>Recursively call the function with <code>n / 10</code> to reverse the remaining digits.</li>
+            </ul>
+        </li>
+        <li>Display the reversed integer.</li>
+        <li>End</li>
+    </ol>
+
+<h2>Understanding Recursion</h2>
+    <p><strong>Recursion</strong> is a technique where a function calls itself to break down a complex problem into simpler sub-problems. In this program, recursion is used to reverse an integer. The function keeps printing the last digit of the number and calling itself with the remaining digits until a single-digit number is reached (the base case).</p>
+
+h2>Code Explanation</h2>
+    <p>The program uses the function <code>reverse(int n)</code> to print the digits of the number in reverse order. If <code>n</code> is a single digit, it is printed directly. Otherwise, the last digit of <code>n</code> is printed, and the function is recursively called with <code>n / 10</code>.</p>
+<h1>Print String in Reverse using Recursion</h1>
+
+<h2>Aim</h2>
+    <p>The aim of this program is to reverse a string using two methods that implement recursion in C++.</p>
+
+ <h2>Algorithm</h2>
+
+<h3>First Method</h3>
+    <ol>
+        <li>Start</li>
+        <li>Input a string from the user.</li>
+        <li>Find the length of the string using a helper function <code>length()</code>.</li>
+        <li>Recursive Function Call:
+            <ul>
+                <li>Base case: if the current index equals the length of the string, stop recursion.</li>
+                <li>Recursively call the function with the next character, and after the recursive call, print the current character.</li>
+            </ul>
+        </li>
+        <li>End</li>
+    </ol>
+<h3>Alternate Method</h3>
+    <ol>
+        <li>Start</li>
+        <li>Input a string from the user.</li>
+        <li>Recursive Function Call:
+            <ul>
+                <li>Base case: if the current character is <code>'\0'</code> (end of string), stop recursion.</li>
+                <li>Recursively call the function with the next character, and after the recursive call, print the current character.</li>
+            </ul>
+        </li>
+        <li>End</li>
+    </ol>
+    <h2>Understanding Recursion</h2>
+    <p><strong>Recursion</strong> is a technique where a function calls itself to solve a problem. In this program, recursion is used to print a string in reverse. The function first moves through the string, pushing characters onto the call stack, and then starts printing characters as the recursion unwinds.</p>
+    <h2>Code Explanation</h2>
+    <p>The program includes two methods to reverse a string:</p>
+    <ul>
+        <li>The first method uses a helper function to calculate the length of the string and then prints each character after the recursive call.</li>
+        <li>The alternate method directly works on the string, checking for the end of the string, and then printing the character as the recursion unwinds.</li>
+    </ul>
